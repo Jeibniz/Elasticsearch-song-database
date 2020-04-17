@@ -1,0 +1,1 @@
+DELETE https://search-songs-zcnwgrrvwmhq7hwgv22g5mjawy.us-east-2.es.amazonaws.com/_template/template_songs?pretty

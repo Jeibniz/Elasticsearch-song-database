@@ -1,0 +1,43 @@
+PUT https://search-songs-zcnwgrrvwmhq7hwgv22g5mjawy.us-east-2.es.amazonaws.com/_template/template_songs?pretty
+
+{
+	"index_patterns": "songs*",
+	"settings": {
+	"number_of_shards": 1,
+	"number_of_replicas": 1
+	},
+	"mappings": {
+		"properties": {
+	        "artist": {
+	            "type": "text",
+	            "fields": {
+	                "keyword": {
+	                    "type": "keyword",
+	                    "ignore_above": 256
+	                }
+	             }
+	        },
+	        "song": {
+	            "type": "text",
+	            "fields": {
+		            "keyword": {
+		                "type": "keyword",
+		                "ignore_above": 256
+		            }
+	            }
+	        },
+	        "lyrics": {
+	            "type": "text",
+	            "fields": {
+	                "keyword": {
+	                    "type": "text",
+	                	"fielddata": true
+	                }
+	            }
+	        }
+	    }
+	}
+}
+
+
+
